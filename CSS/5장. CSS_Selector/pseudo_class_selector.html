@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 클래스 선택자(Pseudo Class Selector)</title>
+    <style>
+        /* 링크 가상 클래스 선택자 : 링크 상태 이용해 선택 */
+        /* link : 한 번도 방문한 적 없는 링크 */
+        a:link { color:cadetblue; }
+
+        /* visited : 한 번이라도 방문한 적 있는 링크 */
+        a:visited {color: brown; }
+
+
+        /* 동적 가상 클래스 선택자 : 동적으로 변하는 상태를 이용 */
+        /* hover : 요소에 마우스를 올릴 경우 */
+        p:hover { color: blue; }
+
+        /* active : 요소를 마우스로 클릭한 경우 */
+        button:active { color: chartreuse; }
+
+
+        /* 입력 요소 가상 클래스 선택자 : 입력 요소의 특정 상태를 이용 */
+        /* focus : 입력 요소에 커서가 활성화될 경우 */
+        input:focus { color: antiquewhite; }
+
+        /* checked : 체크박스가 표시되어 있는 경우 */
+        input:checked + label { font-size: 20px; }
+
+        /* disabled : 상호작용 요소가 비활성화될 경우 */
+        button:disabled { background-color: gray; }
+
+        /* enabled : 상호작용 요소가 활성화될 경우 */
+        button:enabled { background-color: darkorange; }
+
+
+        /* 구조적 가상 클래스 선택자 : 태그의 사용 위치, 다른 태그와의 관계에 따라 */
+        li:first-child { color: red; }
+        li:last-child { color: orange; }
+
+        p:nth-child(1) { color: yellow; }
+        p:nth-last-child(2) { color: green; }
+
+        p:nth-of-type(2) { color: blue; }
+        p:nth-last-of-type(1) { color: darkblue; }
+
+        p:first-of-type { color: purple; }
+        p:last-of-type { color: red; }
+    </style>
+</head>
+<body>
+    <!-- 링크 가상 클래스 선택자 -->
+    <a href="#">link1</a>
+    <a href="#">link2</a>
+
+
+    <!-- 동적 가상 클래스 선택자 -->
+    <p>hover</p>
+    <button>active</button>
+
+
+    <!-- 입력 요소 가상 클래스 선택자 -->
+    focus : <input type="text">
+
+    <input type="checkbox" id="check" checked> 
+    <label for="check">checked</label>
+    
+    <button disabled>disabled</button>
+
+    <button>enabled</button>
+
+
+    <!-- 구조적 가상 클래스 선택자 -->
+    <ol>
+        <li>li1</li>
+        <li>li2</li>
+    </ol>
+    
+    <p>lorem 0</p>
+    <div>
+        <p>lorem 1</p>
+        <span>span 1</span>
+        <p>lorem 2</p>
+    </div>
+    <div>
+        <p>lorem 3</p>
+        <span>span 2</span>
+        <span>span 3</span>
+        <p>lorem 4</p>
+    </div>
+</body>
+</html>

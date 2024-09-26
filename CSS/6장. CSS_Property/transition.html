@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전환(Transition) 효과 속성</title>
+    <style>
+        /* 전환 예시 */
+        .red-box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .red-box:hover { background-color: blue; }
+
+
+        /* transition-property : 속성에 전환 효과 적용 */
+        * {
+            transition-property: all;
+            transition-property: none;
+        }
+
+
+        /* transition-duration : 전환 효과 시간 지정 */
+        /* 전환 효과를 지정하려면 transition-property 와 transition-duration 를 함께 사용 */
+        * {
+            transition-property:background-color, color, width;
+            transition-duration:1s, 500ms, 2s;
+        }
+
+
+        /* transition-delay : 전환 효과 시간 지연 */
+        * {
+            transition-delay: 1s;
+        }
+
+
+        /* transition-timing-function 속성 : 전환 효과의 진행 속도 지정 */
+        .container .bar {
+            background-color: cornflowerblue;
+            width: 20px;
+            height: 20px;
+            margin-bottom: 10px;
+            transition-property: width;
+            transition-duration: 5s;
+        }
+        .container:hover .bar {
+            width: 110px;
+        }
+        /* 첫 번째 bar 클래스 요소 선택 */
+        .bar:nth-child(1) { transition-timing-function: linear; }
+        /* 두 번째 bar 클래스 요소 선택 */
+        .bar:nth-child(2) { transition-timing-function: ease; }
+        /* 세 번째 bar 클래스 요소 선택 */
+        .bar:nth-child(3) { transition-timing-function: ease-in; }
+        /* 네 번째 bar 클래스 요소 선택 */
+        .bar:nth-child(4) { transition-timing-function: ease-out; }
+        /* 다섯 번째 bar 클래스 요소 선택 */
+        .bar:nth-child(5) { transition-timing-function: ease-in-out; }
+
+
+        /* transition 속성으로 한 번에 지정 */
+        /* 전환 효과 적용한 코드 */
+        .red-box {
+            transition-property: width;
+            transition-duration: 1s;
+            transition-timing-function: ease-in;
+            transition-delay: 1s;
+        }
+
+        /* 한번에 지정으로 줄여쓴 후 */
+        .red-box { transition: width, 1s, ease-in, 1s; }
+    </style>
+</head>
+<body>
+    <div class="red-box"></div>
+
+    <br><br><br><br><br>
+
+    <div class="container">
+        <div class="bar">linear</div>
+        <div class="bar">ease</div>
+        <div class="bar">ease-in</div>
+        <div class="bar">ease-out</div>
+        <div class="bar">ease-in-out</div>
+    </div>
+</body>
+</html>

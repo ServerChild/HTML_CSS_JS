@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link & Image</title>
+</head>
+<body>
+    <!-- a 태그 : 내부나 외부 링크 생성 -->
+    <!-- target 속성 : 링크 연결되는 방식(생략 가능) -->
+    <!-- title 속성 : 링크 설명(생략 가능) -->
+    <a href="https://www.naver.com/" target="_blank" title="네이버">네이버</a>
+
+
+    <!-- img 태그 : 이미지 객체 삽입 -->
+    <!-- HTML 파일과 같은 폴더에 있는 img1 폴더의 이미지 삽입 -->
+    <img src="./img1/img1.jpeg">
+
+    <!-- HTML 파일의 상위 폴더에 있는 img2 폴더의 이미지 삽입 -->
+    <img src="../img2/img2.jpeg">
+
+    <!-- alt 속성을 이용해 이미지 설명 넣음 -->
+    <img src="img1/img1.jpeg" alt="농담곰 누움!">
+
+
+    <!-- 이미지 링크 : 이미지 클릭 시 특정 링크 이동 -->
+    <a href="https://www.naver.com/">
+        <img src="img1/img1.jpeg" alt="농담곰">
+    </a>
+</body>
+</html>

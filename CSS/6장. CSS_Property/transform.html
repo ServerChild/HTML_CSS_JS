@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변형(Transform) 효과</title>
+    <style>
+        /* transform 속성 : 특정 변형 효과 지정 */
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: cornflowerblue;
+        }
+
+        /* 2차원 좌표 이동 */
+        /* translate() 함수 : 현재 위치에서 x축, y축 방향으로 이동 */
+        div:hover {
+            /* 오른쪽으로 100px, 아래쪽으로 200px */
+            transform: translate(100px, 200px);
+        }
+
+        /* 2차원 확대 또는 축소 */
+        /* scale() 함수 : x축, y축 만큼 확대 또는 축소 */
+        div:hover { 
+            /* x축 방향으로 2배 확대 */
+            transform: scaleX(2); 
+        }
+
+        div:hover { 
+            /* y축 방향으로 2배 확대 */
+            transform: scaleY(2);  
+        }
+
+        div:hover {
+            /* x축 과 y축 방향으로 동시에 2배 확대 */
+            transform: scale(2, 2); 
+        }
+
+        /* 2차원 기울이기 */
+        /* skew() 함수 : 각도(deg)만큼 x축, y축 방향으로 기울임 */
+        div:hover {
+            /* x축 과 y축 방향으로 30도씩 기울어짐 */
+            transform: skew(30deg, 30deg);
+        }
+
+        /* 2차원 회전하기 */
+        /* rotate() 함수 : 요소를 각도(deg)만큼 회전 */
+        div:hover {
+            /* 요소를 오른쪽으로 30도 회전 */
+            transform: rotate(30deg);
+        }
+
+
+        /* transform-origin 속성 : 요소의 변형 기준점 변경 */
+        div:hover {
+            /* 요소를 오른쪽으로 회전 */
+            transform: rotate(30deg);
+            /* 왼쪽 위 모서리를 기준점으로 지정 */
+            transform-origin: top left;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

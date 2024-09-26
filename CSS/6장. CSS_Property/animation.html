@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션(Animation) 속성</title>
+    <style>
+        /* 키 프레임 : 특정 시점에서 발생하는 여러 작업 정의 */
+        /* 0%(= from) : 시작, 100%(= to) : 끝 */
+        @keyframes bgchange {
+            0%{background-color: red;}
+            100%{background-color: green;}
+        }
+
+        @keyframes bgchange {
+            from{background-color: red;}
+            to{background-color: green;}
+        }
+
+        @keyframes bgchange {
+            0%{background-color: red;}
+            50%{background-color: blue;}
+            100%{background-color: green;}
+        }
+
+
+        /* animation-name : 키 프레임명 지정 */
+        * { animation-name: bgchange; }
+
+
+        /* animation-duration : 애니메이션 지속 시간 설정 */
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: bgchange;
+            animation-duration: 5s;
+        }
+
+
+        /* animation-delay : 애니메이션 지연 시간 */
+        div { animation-delay: 3s; }
+
+
+        /* animation-fill-mode : 애니메이션 상태 유지 설정 */
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: bgchange;
+            animation-duration: 5s;
+            animation-fill-mode: forwards;
+        }
+
+
+        /* animation-iteration-count : 애니메이션 실행 횟수 */
+        div { animation-iteration-count: 3; }
+
+
+        /* animation-play-state : 애니메이션 재생 상태 지정 */
+        div {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            position: relative;
+            animation-name: move;
+            animation-duration: 10s;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+        }
+        @keyframes move {
+            from{left:0;}
+            to{left:300px;}
+        }
+
+
+        /* animation-direction : 애니메이션 진행 방향 */
+        div { animation-direction: normal; }
+
+
+        /* animation 속성 한 번에 지정 */
+        /* 한 번에 지정하기 전 */
+        div {
+            animation-name: bgchange;
+            animation-duration: 5s;
+            animation-iteration-count: 3;
+            transition-timing-function: ease-in;
+        }
+        
+        /* 한 번에 지정한 후 */
+        div { animation: bgchange 5s 3 ease-in; }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <button id="start">start</button>
+    <button id="paused">paused</button>
+
+    <script>
+        const box = document.querySelector("div");
+
+        document.getElementById("start").addEventListener("click", function(){
+            box.style.animationPlayState = "running";
+        });
+        document.getElementById("paused").addEventListener("click", function(){
+            box.style.animationPlayState = "paused";
+        });
+    </script>
+</body>
+</html>

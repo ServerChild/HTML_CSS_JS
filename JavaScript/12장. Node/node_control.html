@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노드 조작(Node Control)</title>
+    <style>
+        .red-color { color: red; }
+        .fz20 { font-size: 20px; }
+    </style>
+</head>
+<body>
+    <!-- 콘텐츠 조작 -->
+    <p id="title">Hello, <span style="display:none;">Javascript!</span></p>
+
+    <script>
+        // textContent : Hello, Javascript!
+        document.getElementById("title").textContent;
+        // innerText : Hello,
+        document.getElementById("title").innerText;
+        // innerHTML : Hello, <span style="display:none;">Javascript!</span>"
+        document.getElementById("title").innerHTML;
+    </script>
+
+
+    <!-- 스타일 조작 -->
+    <p id="text">text</p>
+
+    <script>
+        const pE1 = document.querySelector("p"); // 노드 선택
+        pE1.style.color = "red"; // p 태그 텍스트를 빨간색으로 변경
+        pE1.style.backgroundColor = "black";
+        pE1.style.fontSize = "20px";
+    </script>
+
+
+    <!-- 클래스 속성 조작 -->
+    <p id="text1">text</p>
+
+    <script>
+        const pE2 = document.querySelector("#text1"); // 노드 선택
+        pE2.classList.add("red-color", "fz20"); // 추가
+        pE2.classList.remove("red-color", "fz20"); // 삭제
+        
+        // 1초마다 toggle() 메서드 반복 실행
+        setInterval(function() {
+            pE2.classList.toggle("red-color");
+        }, 1000);
+    </script>
+
+
+    <!-- 데이터 속성 조작 -->
+    <button data-cnt="10">가방</button>
+    <button data-cnt="0">신발</button>
+
+    <!-- data-* 속성이 적용된 HTML 요소 노드를 선택해 data 속성값 출력 -->
+    <script>
+        const buttonEls = document.querySelectorAll("button");
+
+        buttonEls.forEach((el) => {
+            console.log(el.dataset);
+        })
+    </script>
+
+
+    <!-- 메서드로 속성 조작 -->
+    <a href="https://naver.com">네이버</a>
+
+    <script>
+        const aEl = document.querySelector("a");
+
+        // 선택된 요소 노드의 속성값 가져올때
+        const href = aEl.getAttribute("href");
+        console.log(href); // https://naver.com
+
+        // 속성값 새로 설정
+        aEl.setAttribute("href", "https://gilbut.co.kr");
+        aEl.innerText = "길벗";
+        aEl.setAttribute("target", "_blank"); // 새 창으로 열기 속성 지정
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+.grid-container {
+    display: grid;
+
+
+    /* grid-template-columns 와 grid-template-rows : 열 과 행 생성 */
+    /* repeat() 함수 : 두 열이나 행이 같은 크기일 때 지정 */
+    grid-template-columns: repeat(2, 100px); /* 100px 100px */
+    grid-template-rows: repeat(2, 50px); /* 50px 50px */
+
+    /* minmax() 함수 : 열 또는 행 크기의 최솟값 과 최댓값 지정 */
+    grid-template-columns: minmax(10px, 100px); /* 최소 10px ~ 최대 100px */
+    grid-template-rows: minmax(10px, 50px); /* 최소 10px ~ 최대 50px */
+
+    /* repeat() 함수 와 minmax() 함수 함께 사용 o */
+    grid-template-columns: repeat(2, minmax(50px, 100px)); /* 두 열 최소 50px ~ 최대 100px */
+    grid-template-rows: repeat(2, minmax(10px, 50px)); /* 두 행 최소 10px ~ 최대 50px */
+
+
+    /* row-gap 과 column-gap : 행 과 열 간격 지정 */
+    row-gap: 10px;
+    column-gap: 20px;
+
+
+    /* align-items : 그리드 아이템을 그리드 셀의 세로 방향으로 정렬 */
+    align-items: stretch;
+
+
+    /* justify-items : 그리드 아이템을 그리드 셀의 가로 방향으로 정렬 */
+    justify-items: stretch;
+
+
+    /* place-items : align-items 속성과 justify-items 속성 한 번에 사용 */
+    place-items: center end; /* align-items:center , justify-items:end */
+
+    /* place-self : align-self 속성과 justify-self 속성 한 번에 사용 */
+    place-self: center end; /* align-self:center , justify-self:end */
+}
+
+.grid-item {
+    color: white;
+    background-color: #ff5252;
+}
+
+.grid-item:nth-child(2n) {
+    background-color: #bf5e5e;
+}

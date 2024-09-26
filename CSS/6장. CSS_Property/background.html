@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경(Background) 속성</title>
+    <style>
+        /* background-color : 요소의 배경 색상 */
+        #color {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+        }
+
+
+        /* background-image : 요소 배경에 이미지 */
+        /* background-repeat : 이미지 반복 설정 변경 */
+        #image {
+            width: 100px;
+            height: 100px;
+            background-image: url('/CSS/img1.jpeg');
+            background-repeat: round;
+        }
+
+
+        /* background-size : 이미지 크기 지정 */
+        #image2 {
+            width: 80px;
+            height: 60px;
+            background-image: url('/CSS/img1.jpeg');
+            background-size: 80px 60px;
+        }
+
+
+        /* background-position : 이미지 위치 */
+        #image3 {
+            width: 320px;
+            height: 240px;
+            border: 1px solid black;
+            background-image: url('/CSS/img1.jpeg');
+            background-repeat: no-repeat;
+            background-position: 100%;
+        }
+
+
+        /* background-attachment : 이미지 스크롤 작동 방식 */
+        body { height: 1000px; }
+
+        .parent {
+            width: 320px;
+            height: 240px;
+            border: 1px solid black;
+            overflow: scroll;
+        }
+
+        .children {
+            height: 2000px;
+            background-image: url('/CSS/img1.jpeg');
+            background-attachment: scroll;
+        }
+
+
+        /* background 속성 한번에 지정 */
+        #back {
+            background-color: aqua;
+            background-image: url('/CSS/img1.jpeg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+        }
+
+        /* 위의 코드를 한 번에 지정 */
+        #back {
+            background: aqua url('/CSS/img1.jpeg') no-repeat center/100% 100% fixed;
+        }
+    </style>
+</head>
+<body>
+    <!-- background-color 예시 -->
+    <div id="color">background-color</div>
+
+    <!-- background-image 예시 -->
+    <div id="image"></div>
+
+    <!-- background-size 예시 -->
+    <div id="image2"></div>
+
+    <!-- background-position 예시 -->
+    <div id="image3"></div>
+
+    <!-- background-attachment 예시 -->
+    <div class="parent">
+        <div class="children"></div>
+    </div>
+
+    <!-- background 속성 한 번에 지정 -->
+    <div id="back"></div>
+</body>
+</html>

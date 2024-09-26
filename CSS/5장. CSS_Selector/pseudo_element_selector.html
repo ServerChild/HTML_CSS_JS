@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 요소 선택자(Pseudo Element Selector)</title>
+    <style>
+        /* ::before 선택자 : 기준 선택자 앞의 공간 선택 */
+        p::before {
+            content: '<before>';
+        }
+
+        /* ::after 선택자 : 기준 선택자 뒤의 공간 선택 */
+        p::after {
+            content: '<after>';
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem, ipsum dolor.</p>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트(Event)</title>
+</head>
+<body>
+    <!-- 이벤트 등록 -->
+    <!-- 인라인 방식 : HTML 태그에 속성으로 이벤트 등록 -->
+    <!-- 예시 1. 버튼 클릭 시 이벤트 창 -->
+    <button onclick="clickEvent()">클릭</button>
+    
+    <script>
+        function clickEvent() {
+            alert("Click!");
+        }
+    </script>
+
+    <!-- 예시 2. 포커스 이벤트 -->
+    <form>
+        <input type="text" onfocus="focusEvent()" onblur="blurEvent()">
+    </form>
+
+    <script>
+        function focusEvent() {
+            console.log("focus on");
+        }
+        function blurEvent() {
+            console.log("focus out");
+        }
+    </script>
+
+    <!-- 프로퍼티 리스너 방식 : 요소 노드에 직접 속성으로 이벤트 등록 -->
+    <button>클릭</button>
+
+    <script>
+        const btnEl = document.querySelector("button");
+
+        btnEl.onclick = function() {
+            alert("Click");
+        }
+        /*
+            // 화살표 함수 사용 가능
+            btnEl.onclick = () => {
+                alert("arrow click");
+            }
+
+            // 함수 별도 정의
+            btnEl.onclick = clickEvent;
+            function clickEvent() {
+                alert("click");
+            }
+        */
+    </script>
+
+    <!-- 이벤트 등록 메서드 : addEventListener() 메서드 -->
+    <button>클릭</button>
+
+    <script>
+        const btnEl = document.querySelector("button");
+
+        btnEl.addEventListener("click", function() {
+            alert("button Click");
+        });
+
+        /*
+            // 화살표 함수 사용
+            const clickEvent = () => {
+                alert("button Click");
+            }
+            
+            btnEl.addEventListener("click", clickEvent);
+        */
+    </script>
+</body>
+</html>

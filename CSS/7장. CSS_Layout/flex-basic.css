@@ -1,0 +1,36 @@
+.flex-container {
+    width: 300px;
+    height: 200px;
+    background-color: #c4c4c4;
+    border: 1px solid black;
+}
+
+.flex-container {
+    /* flex 속성값 : 적용된 요소의 다음 요소가 항상 줄 바꿈 */
+    display: flex;
+    
+    /* flex-direction : 주축 방향을 결정(기본값 row) */
+    flex-direction: row;
+    
+    /* flex-wrap : 컨데이터 영역을 벗어날 때 어떻게 처리할지 결정 */
+    /* wrap 또는 wrap-reverse 속성값 : 줄 바꿈할 경우 사용 */
+    flex-wrap: wrap;
+
+    /* flex-flow : flex-direction 와 flex-wrap 한 번에 사용 */
+    flex-flow: row nowrap;
+
+    /* justify-content : 플렉스 아이템을 주축 방향으로 정렬 */
+    justify-content: space-between;
+
+    /* align-items : 플렉스 아이템을 교차축 방향으로 정렬 */
+    align-items: center;
+}
+
+.flex-item {
+    color: white;
+    background-color: #ff5252;
+}
+
+.flex-item:nth-child(2n) {
+    background-color: #bf5e5e;
+}

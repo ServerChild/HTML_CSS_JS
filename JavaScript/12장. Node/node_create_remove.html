@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노드 추가, 삭제(Node Create & Remove)</title>
+</head>
+<body>
+    <!-- 노드 추가(Node Create) -->
+    <script>
+        // 요소 노드 생성(주축)
+        const aE1 = document.createElement("a");
+        // 기존 노드에 자식 노드로 연결(a 요소를 body 요소의 자식으로 연결)
+        document.body.appendChild(aE1);
+
+        // 텍스트 노드 추가
+        const txtE1 = document.createTextNode("text1");
+        // 텍스트 요소를 a 요소의 자식으로 연결
+        document.querySelector("a").appendChild(txtE1);
+
+        // 속성 노드 추가
+        const hrefAttr = document.createAttribute("href");
+        // href 속성에 값(value) 할당
+        hrefAttr.value = "https://naver.com";
+        // 속성 노드와 a 요소를 연결(자식 x)
+        document.querySelector("a").setAttributeNode(hrefAttr);
+    </script>
+
+
+    <!-- 노드 삭제(Node Remove) -->
+    <p>text 1</p>
+    <a href="https://wwww.naver.com">네이버</a>
+
+    <!-- p 요소 노드를 찾아서 삭제-->
+    <script>
+        const pEl = document.querySelector("p");
+
+        pEl.parentNode.removeChild(pEl);
+    </script>
+
+    <!-- DOM 트리를 순회하면서 a 태그에 해당하는 요소 노드 모두 삭제 -->
+    <script>
+        const childNodes = document.body.childNodes;
+        
+        childNodes.forEach((node) => {
+            if(node.nodeName === "a")
+                node.parentNode.removeChild(node);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <!-- form 태그 : 폼 양식 의미 -->
+    <form action="#" method="post">
+        <!-- input 태그 : 입력받는 요소 생성 -->
+        텍스트 : <input type="text">
+        비밀번호 : <input type="password">
+        전화번호 : <input type="tel">
+        숫자 : <input type="number">
+        URL 주소 : <input type="url">
+        검색용 텍스트 : <input type="search">
+        이메일 : <input type="email">
+        체크박스 : <input type="checkbox">
+        라디오버튼 : <input type="radio">
+        파일 업로드 : <input type="file">
+        버튼 : <input type="button">
+        이미지 : <input type="image" src="img1/img1.jpeg">
+        숨겨진 요소 : <input type="hidden">
+        날짜(연, 월, 일) : <input type="date">
+        사용자 시간대 : <input type="datetime-local">
+        날짜(연, 월) : <input type="month">
+        날짜(연, 주차) : <input type="week">
+        시간 : <input type="time">
+        숫자 범위(슬라이드) : <input type="range">
+        색상 : <input type="color">
+        폼 전송 : <input type="submit">
+        초기화 : <input type="reset">
+
+
+        <!-- label 태그 : 요소에 이름 붙일 때 -->
+        <label for="username">
+            <input type="text" id="username">이름
+        </label>
+
+
+        <!-- fieldset 태그 : 그룹을 지어 그룹별로 박스 모양의 테두리 생성 -->
+        <!-- legend 태그 : 그룹에 이름을 붙일 때 -->
+        <fieldset>
+            <legend>기본 정보</legend>
+            <p>
+                <label for="userid">아이디</label>
+                <input type="text" id="userid">
+            </p>
+            <p>
+                <label for="passwd">비밀번호</label>
+                <input type="password" id="passwd">
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>선택 정보</legend>
+            <p>
+                <label for="age">나이</label>
+                <input type="number" id="age">
+            </p>
+            <p>
+                <label for="recommender">추천인</label>
+                <input type="text" id="recommender">
+            </p>
+        </fieldset>
+    </form>
+
+
+    <!-- textarea 태그 : 여러 줄 입력 요소 생성 -->
+    <form action="#" method="post">
+        <fieldset>
+            <legend>블로그 글쓰기</legend>
+            <p>
+                <label for="title">제목
+                    <input type="text" id="title" name="title">
+                </label>
+            </p>
+            <p>
+                <label for="desc">내용
+                    <textarea name="desc" id="desc"></textarea>
+                </label>
+            </p>
+        </fieldset>
+    </form>
+
+
+    <!-- select 태그 : 콤보박스 생성 -->
+    <select name="city" id="city">
+        <!-- optgroup 태그 : 항목을 그룹으로 묶음 -->
+        <optgroup label="서울시">
+            <!-- option 태그 : 콤보박스의 항목 하나 -->
+            <option value="강북구">강북구</option>
+            <option value="강남구">강남구</option>
+            <option value="서초구">서초구</option>
+        </optgroup>
+        <optgroup label="경기도 성남시">
+            <option value="중원구">중원구</option>
+            <option value="분당구">분당구</option>
+        </optgroup>
+    </select>
+
+
+    <!-- button 태그 : 클릭할 수 있는 버튼 정의 -->
+    <button type="submit">등록</button>
+
+
+    <!-- 폼 관련 태그에 사용할 수 있는 추가 속성 -->
+    <!-- disabled : 요소 비활성화(서버로 값이 전송되지 않음) -->
+    <input type="text" disabled>
+
+    <!-- readonly : 요소 읽기전용(서버로 값이 전송됨) -->
+    <input type="password" readonly>
+
+    <!-- maxlength : 글자 수 제한 -->
+    <input type="url" maxlength="4">
+
+    <!-- checked : 요소를 선택된 상태로 표시 -->
+    <fieldset>
+        <legend>과일</legend>
+        <input type="checkbox" id="banana" value="banana">
+        <label for="banana">banana</label><br>
+        <input type="checkbox" id="apple" value="apple">
+        <label for="apple">apple</label><br>
+        <input type="checkbox" id="orange" value="orange" checked>
+        <label for="orange">orange</label><br>
+    </fieldset>
+
+    <!-- placeholder : 입력값에 대한 힌트를 적는 용도 -->
+    <input type="tel" placeholder="전화번호 입력">
+</body>
+</html>

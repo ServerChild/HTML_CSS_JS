@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스 모델(Box Model)</title>
+    <style>
+        /* 아래쪽 = 20px */
+        p { margin-bottom: 20px; }
+
+        /* 위쪽 아래쪽 = 10px, 왼쪽 오른쪽 = 20px */
+        p { margin: 10px 20px; }
+
+        /* margin 겹침 현상 : margin 영역이 중첩되면 더 큰 margin 영역으로 병합 */
+        .first { margin-bottom: 20px; }
+        .second { margin-top: 30px; }
+
+        /* border-style 속성 : 테두리 모양 */
+        #none { border-style: none; }
+        #hidden { border-style: hidden; }
+        #solid { border-style: solid; }
+        #double { border-style: double; }
+        #dotted { border-style: dotted }
+        #dashed { border-style: dashed }
+        #groove { border-style: groove }
+        #ridge { border-style: ridge }
+        #inset { border-style: inset }
+        #outset { border-style: outset }
+
+        /* padding 속성 : 내부 여백 */
+        p { 
+            border: 1px solid black;
+            padding: 10px; 
+        }
+
+        /* content 속성 : width(너비), height(높이) */
+        /* box-sizing 속성 */
+        div {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid black;
+            margin: 10px;
+
+            /* width, height 속성의 적용 기준을 바꿈 */
+            box-sizing: border-box; 
+        }
+    </style>
+</head>
+<body>
+    <p>Text1</p>
+    <p>Text2</p>
+
+
+    <!-- margin 겹침 현상 예시 -->
+    <p class="first">Margin Text1</p>
+    <p class="second">Margin Text2</p>
+
+
+    <!-- border-style 속성 예시 -->
+    <p id="none">none</p>
+    <p id="hidden">hidden</p>
+    <p id="solid">solid</p>
+    <p id="double">double</p>
+    <p id="dotted">dotted</p>
+    <p id="dashed">dashed</p>
+    <p id="groove">groove</p>
+    <p id="ridge">ridge</p>
+    <p id="inset">inset</p>
+    <p id="outset">outset</p>
+    
+
+    <!-- content 속성 예시 -->
+    <div></div>
+</body>
+</html>

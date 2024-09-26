@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본 선택자(Selector)</title>
+    <style>
+        /* 전체 선택자 : 모든 요소를 한번에 지정 */
+        * { color: aquamarine; }
+
+        /* 태그 선택자 : 태그명과 일치하는 태그 모두 지정 */
+        p { color:cornflowerblue; }
+
+        /* 아이디 선택자 : id 속성값을 이용해 지정 */
+        #title { color:chartreuse }
+
+        /* 클래스 선택자 : class 속성값을 이용해 지정 */
+        .title1 { color: darkblue; }
+        .detail { color: darkcyan; }
+
+        /* 기본 속성 선택자 : 속성과 값을 이용해 지정 */
+        a[href] { color:blueviolet; }
+        a[target="_blank"] { 
+            color:darkmagenta;
+            display: block;
+        }
+        .title1[href] { color: black; }
+    </style>
+</head>
+<body>
+    <h1>전체 선택자</h1>
+    <p>전체 선택자는 모든 요소를 한 번에 선택함</p>
+
+
+    <h1>태그 선택자</h1>
+    <p>태그 선택자는 태그명과 일치하는 태그를 모두 선택함</p>
+    <p>따라서 모든 p태그의 텍스트 색상이 바뀜</p>
+
+
+    <h1 id="title">아이디 선택자</h1>
+    <p>아이디 선택자는 id 속성값을 이용해 선택자를 지정함</p>
+
+    <h1 class="title1">클래스 선택자</h1>
+    <a href="#" class="title1">속성 선택자 + 클래스 선택자</a>
+    <p class="detail">class 속성값으로 선택자를 지정함</p>
+    <p class="detail">class 속성은 속성값을 중복해서 사용할 수 있음</p>
+
+    <h1>기본 속성 선택자</h1>
+    <a href="#">기본 a 태그</a>
+    <a href="#" target="_blank">새 창으로 열리는 a 태그</a>
+</body>
+</html>

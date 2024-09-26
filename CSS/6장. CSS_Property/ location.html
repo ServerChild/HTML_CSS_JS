@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위치(Location) 속성</title>
+    <style>
+        /* position 속성 : HTML 요소를 좌푯값에 따라 배치할 때 */
+        /* static 속성값 : 기본 */
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+
+        /* relative 속성값 : 좌표 속성에 따라 배치(기준점 - 요소 왼쪽 모서리) */
+        .RedBox { background-color: red; }
+        .GreenBox {
+            background-color: green;
+            position:relative;
+            top: 100px;
+            left: 100px;
+        }
+        .BlueBox { background-color: blue; }
+
+        /* absolute 속성값 : 좌표 속성에 따라 배치(기준점 - 웹 브라우저 왼쪽 모서리) */
+        body { margin: 0; }
+        .GreenBox {
+            background-color: green;
+            position:absolute;
+            left: 100px;
+        }
+
+        /* fixed 속성값 : 지정된 위치에 고정 */
+        body {
+            margin: 0;
+            height: 4000px;
+        }
+        .GreenBox {
+            background-color: green;
+            position:fixed;
+            left: 100px;
+            top: 100px;
+        }
+
+        /* sticky 속성값 : 스크롤 중 일정 지점(임계점)이 되면 요소가 fixed 값처럼 작동 */
+        .GreenBox {
+            background-color: green;
+            position:sticky;
+            top: 0;
+        }
+
+
+        /* z-index 속성 : 요소의 z축 위치 결정 */
+        .box2 {
+            width: 100px;
+            height: 100px;
+        }
+        .RedBox2 {
+            background-color: red;
+            position: relative;
+            z-index: 10;
+        }
+        .GreenBox2 {
+            background-color: green;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+
+        /* float 속성 : 요소를 공중에 띄워 다음 요소를 주변에 자연스럽게 배치 */
+        /* 이미지 요소와 텍스트 요소 배치 */
+        img {
+            float: left;
+            /* margin-right: 1rem; */
+        }
+
+        /* 블록 성격 요소를 인라인 성격 요소처럼 배치 */
+        div { color: white; }
+        .red-box { 
+            background-color: red;
+            float: left;
+        }
+        .blue-box { 
+            background-color: blue;
+            float: left;
+        }
+
+        /* float 속성 문제점 : 원래 위치 보장 x */
+        .container {
+            width: 400px;
+            padding: 1rem;
+            margin: 0 auto;
+            border: 1px solid black;
+            background-color: #ccc;
+        }
+        /* 문제 해결방법 */
+        .container::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .box3 {
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+        .red-box3 { background-color: red; }
+        .blue-box3 { background-color: blue; }
+
+
+        /* clear 속성 : float 속성 해제 */
+        .box4 {
+            width: 100px;
+            height: 100px;
+        }
+        .red-box4 {
+            background-color: red;
+            float: left;
+        }
+        .green-box4 {
+            background-color: green;
+            float: left;
+        }
+        .blue-box4 {
+            background-color: blue;
+            clear: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- position 속성 예시 -->
+    <div class="box RedBox"></div>
+    <div class="box GreenBox"></div>
+    <div class="box BlueBox"></div>
+
+
+    <!-- z-index 속성 예시 -->
+    <div class="box2 RedBox2"></div>
+    <div class="box2 GreenBox2"></div>
+
+
+    <!-- float 속성 예시 1 -->
+    <img src="../img1.jpeg" alt="농담곰">
+    <p>
+        自分ツッコミくま / ナガノのくま(농담곰 / 담곰이)는 일본의 크리에이터 나가노(ナガノ) 작가의 캐릭터.
+        2014년 나가노 작가가 라인 스탬프를 만들 때 自分ツッコミ(스스로 태클을 거는 것)가 메인인 스탬프를 만들려고 했는데, 글씨의 옆에 그다지 눈에 띄지 않는 캐릭터를 넣으려고 하얀 곰을 그렸던 것이 시작이었다.
+        일본명은 自分ツッコミくま로써 직역하면 '스스로 츳코미하는 곰'인데, 츳코미라는 표현을 그대로 쓰기도 어렵고, 설명하기도 다소 복잡하다 보니 영문명 joke bear를 국내로 들여오면서 그대로 받아들여 농담곰이란 이름을 채택한 듯하다.
+    </p>
+
+
+    <!-- float 속성 예시 2 -->
+    <div class="red-box">red-box</div>
+    <div class="blue-box">blue-box</div>
+
+    <br><br><br><br><br>
+
+    <!-- float 속성 문제점 예시 -->
+    <div class="container">
+        <div class="box3 red-box3"></div>
+        <div class="box3 blue-box3"></div>
+    </div>
+
+    <br><br><br><br><br>
+
+    <!-- clear 속성 예시 -->
+    <div class="box4 red-box4"></div>
+    <div class="box4 green-box4"></div>
+    <div class="box4 blue-box4"></div>
+</body>
+</html>
